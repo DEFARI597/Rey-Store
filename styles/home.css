@@ -1,0 +1,302 @@
+/* Menggunakan font Inter agar persis seperti desain modern UI */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-dark: #1e2128;
+  --bg-nav: #15171c;
+  --cyan-accent: #3ce0d8;
+  --text-white: #ffffff;
+  --text-gray: #a0a5b1;
+  --card-bg: #272b34;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  /* Efek cahaya gradien tosca */
+  background-image: radial-gradient(
+    circle at 10% 30%,
+    rgba(60, 224, 216, 0.15) 0%,
+    transparent 50%
+  );
+  background-attachment: fixed;
+  padding-bottom: 60px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background-color: var(--bg-nav);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Membatasi tinggi logo gambar agar pas di navbar */
+.nav-left > img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nav-menu a.active {
+  color: var(--cyan-accent);
+}
+
+.nav-search {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.nav-search input {
+  width: 100%;
+  background-color: #2a2d36;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: var(--text-white);
+  font-size: 13px;
+  outline: none;
+}
+
+.nav-search input::placeholder {
+  color: var(--text-gray);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0f1115;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= KONTEN UTAMA ================= */
+.content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HERO BANNER */
+.hero-section {
+  margin-top: 10px;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* BAGIAN UMUM (SECTION) */
+.section {
+  margin-top: 40px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.section-header p {
+  color: var(--text-gray);
+  font-size: 12px;
+}
+
+/* ================= TRENDING GRID ================= */
+.grid-trending {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card-wide {
+  background-color: var(--card-bg);
+  height: 150px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mengubah tag <img> agar menutupi seluruh kotak seperti background */
+.card-wide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cyan-accent);
+  color: #15171c;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2; /* Menjaga agar tulisan berada di atas gambar */
+}
+
+.card-info-bottom span {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.card-info-bottom .sub {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* ================= TOP UP GAMES GRID ================= */
+.category-pill {
+  background-color: #6a5a7c;
+  color: white;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.grid-games {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.game-card {
+  background-color: var(--cyan-accent);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-img {
+  width: 100%;
+  aspect-ratio: 3/4; /* Menjaga rasio kotak gambar */
+  background-color: var(--card-bg);
+  position: relative;
+}
+
+/* Jika nanti kamu menambahkan tag <img> di dalam .game-img, style ini akan merapikannya otomatis */
+.game-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-label {
+  padding: 10px;
+  color: #15171c;
+}
+
+.game-label .title {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-label .dev {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE DESIGN (Tampilan HP & Tablet) */
+@media (max-width: 1024px) {
+  .grid-trending {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-games {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-search {
+    display: none;
+  }
+  .grid-trending {
+    grid-template-columns: 1fr;
+  }
+  .grid-games {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-games {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
