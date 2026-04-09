@@ -139,12 +139,42 @@ body {
 /* =========================================
  3. HERO BANNER
  ========================================= */
+/* 1. Class Utama (Pastikan properti ini ada) */
 .hero-banner {
   width: 100%;
-  height: 250px;
+  height: 500px; /* Sesuaikan tinggi banner-mu */
+  /* background-image diset via inline style di HTML */
   background-size: cover;
   background-position: center;
-  background-color: #24242b; /* Fallback color */
+
+  position: relative; /* WAJIB ADA: Sebagai jangkar untuk lapisan gradasi */
+  overflow: hidden; /* Mencegah efek keluar batas */
+}
+
+/* 2. Membuat Lapisan Gradasi Transparan DI BAWAH */
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(115, 115, 115, 0) 0%,
+    rgba(115, 115, 115, 0.1) 40%,
+    rgba(121, 121, 121, 0.7) 100%
+  );
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* --- TAMBAHKAN KODE INI UNTUK MENGHALUSKAN BATAS ATAS BLUR --- */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 40%);
+
+  z-index: 1;
 }
 
 /* =========================================
@@ -170,20 +200,25 @@ body {
 }
 
 .card {
-  background-color: var(--bg-card);
   border-radius: 12px;
   padding: 20px;
+  background-color: rgba(34, 34, 34, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .account-info {
   display: flex;
   gap: 20px;
   align-items: center;
+  background-color: rgba(85, 93, 107, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .game-avatar {
   width: 80px;
-  height: 80px;
+  height: 120px;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -222,7 +257,9 @@ body {
 }
 
 .total-card {
-  background-color: var(--bg-card-dark);
+  background-color: rgba(34, 34, 34, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -309,7 +346,9 @@ body {
  5. CARA PEMBAYARAN (Instruksi)
  ========================================= */
 .instruction-card {
-  background-color: var(--bg-card-dark);
+  background-color: rgba(34, 34, 34, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -408,4 +447,55 @@ body {
   .search-wrapper {
     display: none;
   }
+}
+
+/* --- GAYA TOMBOL CYAN (BELI LAGI & KEMBALI) --- */
+.btn-cyan {
+  width: 100%;
+  background-color: var(
+    --cyan-accent
+  ); /* Diperbaiki: Menggunakan variabel yang ada di :root */
+  color: #1b1a20; /* Warna teks gelap agar kontras */
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-top: 15px;
+}
+
+.btn-cyan:hover {
+  opacity: 0.85;
+}
+
+/* Jarak khusus untuk tombol di kolom kanan */
+.mt-custom {
+  margin-top: 30px;
+}
+
+.badge.success {
+  background-color: #a7f3d0; /* Diperbaiki juga agar sewarna dengan tombol */
+  color: #1b1a20;
+}
+
+.badge.paid {
+  background-color: #a7f3d0; /* Diperbaiki juga agar sewarna dengan tombol */
+  color: #1b1a20;
+}
+/* Membungkus barisan status agar rapi */
+.status-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Jarak antar baris status */
+}
+
+/* Reset margin pada status-row agar memakai gap dari wrapper */
+.status-wrapper .status-row {
+  margin-bottom: 0;
 }

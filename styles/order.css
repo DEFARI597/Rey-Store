@@ -19,11 +19,17 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background-color: #403b4a;
   color: var(--text-white);
   background: linear-gradient(to right, #6fafb0 1%, #6fafb0 0%, #403b4a 100%);
   background-attachment: fixed;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* =========================================
@@ -51,8 +57,8 @@ body {
 }
 
 .check-circle {
-  width: 60px;
-  height: 60px;
+  width: 45px; /* Diperkecil dari 60px */
+  height: 45px; /* Diperkecil dari 60px */
   background-color: var(--green-success);
   border-radius: 50%;
   display: flex;
@@ -62,10 +68,11 @@ body {
   box-shadow: 0 4px 15px rgba(32, 201, 118, 0.3);
 }
 
-.check-circle svg {
-  width: 30px;
-  height: 30px;
-  color: white;
+/* Mengubah target menjadi tag <img> */
+.check-circle img {
+  width: 200px; /* Diperkecil dari 30px */
+  height: 200px; /* Diperkecil dari 30px */
+  object-fit: contain; /* Memastikan gambar tetap proporsional dan tidak gepeng */
 }
 
 /* Hiasan Partikel Bintang & Kotak */
@@ -107,6 +114,7 @@ body {
    ========================================= */
 .modal-title {
   font-size: 18px;
+  color: #ebeaef;
   font-weight: 600;
   margin-bottom: 8px;
   text-align: center;
@@ -114,7 +122,7 @@ body {
 
 .modal-subtitle {
   font-size: 13px;
-  color: var(--text-gray);
+  color: #ebeaef;
   margin-bottom: 25px;
   text-align: center;
   max-width: 90%;
@@ -124,8 +132,9 @@ body {
    5. KOTAK RINCIAN PESANAN (Card)
    ========================================= */
 .order-details-card {
-  background-color: var(--card-bg);
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80vh;
+  height: 48vh;
   border-radius: 12px;
   padding: 30px;
   margin-bottom: 25px;
@@ -134,13 +143,14 @@ body {
 
 .details-grid {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  row-gap: 20px;
-  font-size: 14px;
+  grid-template-columns: 250px 1fr;
+  row-gap: 35px;
+  font-size: 12px;
+  align-content: center;
 }
 
 .detail-label {
-  color: var(--text-gray);
+  color: var(--text-white);
 }
 
 .detail-value {
@@ -170,7 +180,7 @@ body {
 
 .btn-confirm {
   background-color: var(--cyan-accent);
-  color: #000000;
+  color: #7e768f;
 }
 
 .btn-confirm:hover {

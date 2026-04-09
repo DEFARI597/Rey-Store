@@ -656,6 +656,7 @@ input:focus {
   transition: 0.3s;
   display: flex;
   justify-content: center;
+  text-decoration: none;
   align-items: center;
   gap: 10px; /* Memberi jarak yang pas antara icon dan teks */
 }
