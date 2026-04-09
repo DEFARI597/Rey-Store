@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReyyStore - Detail Transaksi</title>
+    <link rel="stylesheet" href="../styles/payments.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-top">
+          <div class="nav-brand">
+            <img src="../img/reyy_logo.png" class="main-logo" alt="ReyyStore" />
+          </div>
+
+          <div class="nav-search">
+            <div class="search-wrapper">
+              <span class="search-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </span>
+              <input type="text" placeholder="Cari Game..." />
+            </div>
+          </div>
+
+          <div class="nav-right">
+            <div class="lang-selector">
+              <img src="https://flagcdn.com/w20/id.png" alt="ID" />
+              <span>ID / IDR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-bottom">
+          <ul class="nav-menu">
+            <li>
+              <a href="../index.html" class="active">
+                <img src="../img/icons/SVG.svg" class="nav-icon" />
+                <span>Topup</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../img/icons/SVG1.svg" class="nav-icon" />
+                <span>Cek Transaksi</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="hero-banner"
+      style="background-image: url(&quot;../img/ff_frame.jpeg&quot;)"
+    ></header>
+
+    <main class="invoice-main container">
+      <div class="invoice-grid">
+        <div class="left-col">
+          <div class="card account-info">
+            <img
+              src="../img/ff_detail.png"
+              alt="Free Fire"
+              class="game-avatar"
+            />
+            <div class="acc-details">
+              <h4>Informasi Akun</h4>
+              <div class="detail-row">
+                <span>Nickname</span>
+                <span>: Prince' Boyyy</span>
+              </div>
+              <div class="detail-row">
+                <span>ID</span>
+                <span>: 2702943171</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card price-breakdown">
+            <div class="p-row">
+              <span>Harga</span>
+              <span>Rp 950</span>
+            </div>
+            <div class="p-row">
+              <span>Jumlah</span>
+              <span>1x</span>
+            </div>
+            <div class="p-row">
+              <span>Subtotal</span>
+              <span>Rp 950</span>
+            </div>
+          </div>
+
+          <div class="total-card">
+            <span class="t-label">Total Pembayaran</span>
+            <span class="t-amount">
+              Rp 950
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="cursor: pointer"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="status-row">
+            <span class="status-label">Metode Pembayaran</span>
+            <span>QRIS (All Payment)</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Status Pembayaran</span>
+            <span class="badge unpaid">UNPAID</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Status Transaksi</span>
+            <span class="badge pending">PENDING</span>
+          </div>
+
+          <p class="payment-msg">
+            Pesanan kamu lagi diproses, tunggu sebentar ya!
+          </p>
+
+          <div class="qr-container">
+            <img src="../img/qr-placeholder.png" alt="QR Code QRIS" />
+          </div>
+          <p class="qr-note">
+            Screenshot QR code diatas untuk melakukan pembayaran.
+          </p>
+        </div>
+      </div>
+
+      <section class="instruction-card">
+        <div class="inst-header">
+          <div class="inst-num">1</div>
+          <h3>Cara Melakukan Pembayaran</h3>
+        </div>
+        <div class="inst-body">
+          <p>Cara Melakukan Pembayaran dengan Upload Gambar QRIS:</p>
+          <ol>
+            <li>
+              Unduh kode QR atau screenshot kode QR pada invoice Reyy Store.
+            </li>
+            <li>Setelah itu, klik ikon Upload QR dari Galeri / ikon gambar.</li>
+            <li>
+              Pilih gambar QRIS yang sudah kamu download atau screenshot dari
+              Reyy Store dan tersimpan di galeri.
+            </li>
+            <li>Klik OK untuk lanjut ke proses berikutnya.</li>
+            <li>Klik Bayar Sekarang untuk menyelesaikan transaksi.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-desc">
+          Reyystore adalah partner terbaik para gamers Indonesia, platform top
+          up game dengan harga ramah kantong, proses super cepat, dan sistem
+          keamanan terjamin sehingga semua kebutuhan gaming kamu bisa selesai
+          dalam satu tempat. Spesialis top up Mobile Legends terpercaya dengan
+          harga bersaing, transaksi aman, legal 100%, dan layanan buka 24 jam
+          non-stop kapan pun kamu butuh. Reyystore berkomitmen menghadirkan
+          layanan yang konsisten, responsif, dan terus berkembang mengikuti
+          kebutuhan dunia gaming yang makin kompetitif, dengan fokus memberikan
+          pengalaman top up yang cepat, nyaman, dan tanpa ribet. Follow sosial
+          media Reyystore untuk update promo terbaru, info penting, serta
+          berbagai tips dan insight seputar dunia game, dan jadilah bagian dari
+          komunitas gamers yang aktif dan solid. Reyystore adalah solusi praktis
+          untuk semua kebutuhan top up game kamu.
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Peta Situs</h4>
+            <ul>
+              <li><a href="#">Beranda</a></li>
+              <li><a href="#">Daftar Game</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Tentang Reyystore</a></li>
+              <li><a href="#">Hubungi Kami</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Dukungan</h4>
+            <ul>
+              <li><a href="#">WhatsApp</a></li>
+              <li><a href="#">Email</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legalitas</h4>
+            <ul>
+              <li><a href="#">Kebijakan Pribadi</a></li>
+              <li><a href="#">Syarat & Ketentuan</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Social Media</h4>
+            <ul>
+              <li><a href="#">Tiktok ReyStore</a></li>
+              <li><a href="#">Instagram ReyStore</a></li>
+              <li><a href="#">Discord ReyStore</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -373,6 +373,10 @@ game-img .img-main {
   color: #615a70;
 }
 
+.game-label a {
+  text-decoration: none;
+}
+
 .game-label .title {
   font-weight: 800;
   font-size: 12px;
